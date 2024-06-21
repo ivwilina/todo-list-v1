@@ -20,20 +20,24 @@
 }
 .category{
     background-color: #ACE2E1;
-    border: 2px solid black;
-    border-radius: 5px;
+    border-radius: 7px;
 }
 .wrapper{
     width: 100%;
 }
-.category-create{
+.category-create-button{
     text-align: center;
     font-size: 22px;
     font-weight: bold;
     color: white;
     background-color: black;
     border-radius: 5px;
-    padding: 7px;
+    border: 2px solid black;
+    padding: 5px;
+}
+.category-create-button:hover{
+    background-color: white;
+    color: black;
 }
 .category-container{
     width: 100%;
@@ -48,18 +52,129 @@
     border-bottom: 1px solid black;
 }
 .goal{
-    padding: 5px 3px 3px 5px;
+    position: relative;
+    padding: 3px 3px 7px 33px;
     font-size: 18px;
     font-weight: 600;
+}
+.checked{
+    background: #DFF5FF;
+    text-decoration: line-through;
+}
+.checked::before{
+    content: '';
+    position: absolute;
+    border-color: black;
+    border-style: solid;
+    border-width: 0 2px 2px 0;
+    top: 5px;
+    left: 16px;
+    transform: rotate(45deg);
+    height: 15px;
+    width: 7px;
 }
 [class*="col-"]{
     float: left;
     padding: 5px;
 }
+.create-category-wrapper{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 15px 10px;
+    display: grid;
+    place-items: center;
+    pointer-events: none;
+    border-radius: 10px;
+    backdrop-filter: blur(8px);
+    z-index: 1;
+    background: rgb(0, 0, 0 / 20%);
+    padding: 1rem;
+    opacity: 0;
+}
+.create-category-panel{
+    position: relative;
+    display: grid;
+    place-items: center;
+    border-radius: 10px;
+    background: white;
+}
+.category-create-panel-title{
+    text-align: center;
+    padding: 10px;
+    font-weight: 600;
+    font-size: 22px;
+}
+#category-data{
+    outline: none;
+    margin: 10px;
+    width: 70%;
+    font-size: 22px;
+}
+.create-category-submit{
+    border: 0;
+    background-color: #41C9E2;
+    padding: 1em 3em;
+    border-radius: 7px;
+}
+.create-goal-wrapper{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 15px 10px;
+    display: grid;
+    place-items: center;
+    pointer-events: none;
+    border-radius: 10px;
+    backdrop-filter: blur(8px);
+    z-index: 1;
+    background: rgb(0, 0, 0 / 20%);
+    padding: 1rem;
+    opacity: 0;
+}
+.create-goal-panel{
+    position: relative;
+    display: grid;
+    place-items: center;
+    border-radius: 10px;
+    background: white;
+}
+.goal-create-panel-title{
+    text-align: center;
+    padding: 10px;
+    font-weight: 600;
+    font-size: 22px;
+}
+#goal-data{
+    outline: none;
+    margin: 10px;
+    width: 70%;
+    font-size: 22px;
+}
+.create-goal-submit{
+    border: 0;
+    background-color: #41C9E2;
+    padding: 1em 3em;
+    border-radius: 7px;
+}
+.show{
+    opacity: 1;
+    pointer-events: all;
+}
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
     .list-container{
         width: 90%;
+    }
+    .create-category-panel{
+        width: 80%;
+    }
+    .create-goal-panel{
+        width: 80%;
     }
 }
 
@@ -78,19 +193,66 @@
         width: 50%;
         padding-right: 5px;
     }
+    .create-category-panel{
+        width: 50%;
+    }
+    .create-goal-panel{
+        width: 50%;
+    }
 }
 
-/* Medium devices (landscape tablets, 768px and up) */
-@media only screen and (min-width: 768px) {
-    
-}
 
 /* Large devices (laptops/desktops, 992px and up) */
 @media only screen and (min-width: 992px) {
-    
+    .list-container{
+        width: 70%;
+    }
+    .col-l-1{
+        width: 33.3%;
+    }
+    .col-l-2{
+        width: 66.6%;
+    }
+    .col-l-3{
+        width: 100%;
+    }
+    .create-l-1{
+        width: 33.3%;
+        padding-right: 5px;
+    }
+    .create-category-panel{
+        width: 33.3%;
+    }
+    .create-goal-panel{
+        width: 33.3%;
+    }
 }
 
 /* Extra large devices (large laptops and desktops, 1200px and up) */
 @media only screen and (min-width: 1200px) {
-    
+    .list-container{
+        width: 70%;
+    }
+    .col-xl-1{
+        width: 25%;
+    }
+    .col-xl-2{
+        width: 50%;
+    }
+    .col-xl-3{
+        width: 75%;
+    }
+    .col-xl-4{
+        width: 100%;
+    }
+    .create-xl-1{
+        width: 25%;
+        padding-right: 5px;
+    }
+    .create-category-panel{
+        width: 25%;
+    }
+    .create-goal-panel{
+        width: 25%;
+    }
 }
